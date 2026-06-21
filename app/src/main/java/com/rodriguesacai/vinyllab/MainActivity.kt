@@ -37,7 +37,6 @@ import androidx.compose.material3.FilterChip
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedButton
-import androidx.compose.material3.OutlinedButtonDefaults
 import androidx.compose.material3.Slider
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
@@ -57,7 +56,6 @@ import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.drawscope.rotate
-import androidx.compose.ui.input.pointer.consume
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextOverflow
@@ -411,7 +409,7 @@ private fun TransportControls(
             onClick = onJogBack,
             enabled = hasTrack,
             modifier = Modifier.weight(1f),
-            colors = OutlinedButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.onSurface)
+            colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.onSurface)
         ) { Text("− 5s", fontWeight = FontWeight.Black) }
 
         Button(
@@ -425,7 +423,7 @@ private fun TransportControls(
             onClick = onJogForward,
             enabled = hasTrack,
             modifier = Modifier.weight(1f),
-            colors = OutlinedButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.onSurface)
+            colors = ButtonDefaults.outlinedButtonColors(contentColor = MaterialTheme.colorScheme.onSurface)
         ) { Text("+ 5s", fontWeight = FontWeight.Black) }
     }
 
@@ -434,7 +432,7 @@ private fun TransportControls(
         onClick = onReverseJog,
         enabled = hasTrack,
         modifier = Modifier.fillMaxWidth(),
-        colors = OutlinedButtonDefaults.outlinedButtonColors(
+        colors = ButtonDefaults.outlinedButtonColors(
             contentColor = if (reverseJogEnabled) Color(0xFFFFA7A0) else MaterialTheme.colorScheme.secondary
         )
     ) {
